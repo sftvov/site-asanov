@@ -1,0 +1,125 @@
+$colorMain: #f2f1f3;
+$colorSecond: #fdeaf1;
+$colorLight: #e6e4e7;
+$colorMainHover: #ee2a74;
+$colorLinkHover: #ee2a74;
+$colorBright: #ffa300;
+$colorAlert: #ff3451;
+$colorText: #1a1a1a;
+$colorTextGray: #a2a0a3;
+$colorTextLight: #ffffff;
+
+body {
+	color: $colorText;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+	letter-spacing: 0em;
+	font-style: normal;
+}
+
+.button {
+	cursor: pointer;
+	color: $colorText;
+	text-align: center;
+	padding: 12px 16px;
+	background-color: #{$colorLight + '00'};
+	border: 1px solid $colorText;
+	border-radius: 8px;
+	transition: all 0.3s linear;
+	&:hover,
+	&:active {
+		color: $colorTextLight;
+		background-color: $colorMainHover;
+		border-color: $colorMainHover;
+	}
+	&--main {
+		color: $colorMainHover;
+		border-color: $colorMainHover;
+	}
+}
+
+.title {
+	// text-transform: uppercase;
+	font-size: 2em;
+	font-weight: 700;
+	padding: 24px 0;
+	@media (min-width: $md2+px) {
+		padding: 48px 0;
+	}
+}
+
+._section {
+	margin-bottom: 30px;
+	@media (min-width: $md2+px) {
+		margin-bottom: 60px;
+	}
+}
+
+// ._underline {
+// 	position: relative;
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		width: calc(100% + 15px);
+// 		height: 1px;
+// 		background-color: $colorText;
+// 		transition: width 0.3s ease-out;
+// 		@include common-value('bottom', -1);
+// 	}
+// }
+
+// ._cross {
+// 	cursor: pointer;
+// 	padding: 20px;
+// 	&::after,
+// 	&::before {
+// 		position: absolute;
+// 		top: 19px;
+// 		right: 10px;
+// 		content: '';
+// 		width: 20px;
+// 		height: 2px;
+// 	}
+// 	&::after {
+// 		transform: rotate(45deg);
+// 	}
+// 	&::before {
+// 		transform: rotate(-45deg);
+// 	}
+// }
+
+// ._arrow {
+// 	position: relative;
+// 	padding-left: 20px;
+// 	&::after,
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		width: 10px;
+// 		height: 2px;
+// 		background-color: $colorText;
+// 		border-radius: 25%;
+// 		transition: all 0.5s ease;
+// 	}
+// 	&::after {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(50deg);
+// 		right: -4px;
+// 	}
+// 	&::before {
+// 		top: calc(50% + 1px);
+// 		transform: rotate(130deg);
+// 	}
+// 	&._active {
+// 		&::after {
+// 			transform: rotate(130deg);
+// 		}
+
+// 		&::before {
+// 			transform: rotate(40deg);
+// 			bottom: calc(50% + 2px);
+// 			right: 12px;
+// 		}
+// 	}
+// }

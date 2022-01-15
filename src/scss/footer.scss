@@ -1,0 +1,124 @@
+.footer {
+	width: calc(100% - 280px);
+	border-top: 1px solid $colorMain;
+	&__container {
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		justify-items: flex-start;
+	}
+
+	&__shops-wrapper {
+		grid-column: span 4;
+		margin-top: 21px;
+	}
+
+	&__text-icon-wrapper {
+	}
+
+	&__icon-location {
+	}
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		margin-top: 32px;
+		row-gap: 8px;
+	}
+
+	&__title {
+	}
+
+	&__item {
+		color: $colorTextGray;
+	}
+
+	&__reviews {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__review-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 12.59px;
+		margin: 10px 0 8px 0;
+		& picture {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__company {
+	}
+
+	&__stars-wrapper {
+		display: flex;
+		column-gap: 2px;
+	}
+
+	&__star {
+		display: flex;
+		&::before {
+			font-size: 16px;
+		}
+		&.gray::before {
+		}
+	}
+
+	&__img-container {
+		display: flex;
+		align-items: center;
+		&--social {
+			column-gap: 8px;
+		}
+		&--payment {
+			column-gap: 16px;
+			& picture {
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+
+	&__payment {
+		grid-column: span 3;
+	}
+
+	&__politics {
+		margin-top: 39px;
+		grid-column: span 4;
+	}
+
+	&__bottom {
+		grid-column: span 4;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin: 16px 0;
+	}
+
+	&__copyright {
+	}
+
+	&__developed {
+		display: flex;
+		align-items: center;
+		column-gap: 4px;
+	}
+
+	&__icon-assanov {
+		display: flex;
+		align-items: center;
+		&::before {
+			color: $colorMainHover;
+			font-size: 16px;
+		}
+	}
+
+	&__agency {
+	}
+}
