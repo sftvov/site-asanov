@@ -2,7 +2,7 @@
 @import 'fonts';
 
 $fontFamily: 'helvetica';
-$minWidth: 320;
+$minWidth: 319;
 $maxWidth: 3000;
 
 //Breakpoints:
@@ -33,7 +33,10 @@ $md2: 767.95;
 .page {
 	min-width: 0;
 	min-height: 0;
-	width: calc(100% - 280px);
+	@media (min-width: $md1+px) {
+		width: calc(100% - 280px);
+	}
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

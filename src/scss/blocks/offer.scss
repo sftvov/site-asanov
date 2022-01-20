@@ -17,6 +17,17 @@
 		margin-left: 8px;
 	}
 
+	&__span-desktop {
+		@media (max-width: $md2+px) {
+			display: none;
+		}
+	}
+	&__span-mobile {
+		@media (min-width: $md2+px) {
+			display: none;
+		}
+	}
+
 	&__attention {
 		width: 28px;
 		height: 28px;
@@ -34,13 +45,41 @@
 	}
 }
 .card {
+	transition: border-color 0.3s ease-in;
 	display: grid;
 	grid-template-columns: auto 85px;
-	grid-template-rows: 168px repeat(5, auto);
+	grid-template-rows: 168px minmax(80px, auto) minmax(40px, auto) 32px 0;
 	align-items: center;
-	padding: 0 8px 8px 8px;
+	min-height: 329px;
+	padding: 0 8px 7px 8px;
 	border: 1px solid $colorLight;
 	border-radius: 8px;
+	&:hover {
+		border-color: $colorMainHover;
+	}
+	@media (min-width: $md1+px) {
+		&:hover {
+			grid-template-rows: 168px minmax(80px, auto) minmax(40px, auto) 32px auto;
+			& .card__characters {
+				padding-top: 10px;
+				visibility: visible;
+				opacity: 1;
+				height: auto;
+				row-gap: 2px;
+			}
+			& .card__name-characters {
+				margin-top: 6px;
+			}
+		}
+	}
+	@media (max-width: $md2+px) {
+		grid-template-rows: 120px minmax(88px, auto) minmax(40px, auto) 28px 0;
+		grid-template-columns: auto 40px;
+		min-height: 285px;
+		&:hover {
+			// grid-template-rows: 120px minmax(88px, auto) minmax(40px, auto) 28px auto;
+		}
+	}
 	&__img {
 		grid-column: span 2;
 		width: 100%;
@@ -53,8 +92,17 @@
 	}
 
 	&__name {
+		align-self: start;
 		grid-column: span 2;
 		padding: 8px 0 24px 0;
+		@media (max-width: $md2+px) {
+			font-size: 12px;
+			line-height: 16px;
+			padding: 12px 0;
+		}
+	}
+
+	&__prices {
 	}
 
 	&__old-price {
@@ -62,29 +110,67 @@
 		line-height: 16px;
 		text-decoration: line-through;
 		color: $colorTextGray;
-		grid-column: 1/2;
-		margin-top: 24px;
 	}
 
 	&__new-price {
+		// align-self: start;
 		font-size: 22px;
 		line-height: 24px;
 		font-weight: 700;
-		grid-column: 1/2;
-		margin-bottom: 16px;
+		// grid-column: 1/2;
+		@media (max-width: $md2+px) {
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 
 	&__button {
 		font-size: 12px;
 		line-height: 16px;
 		grid-column: 2/3;
-		grid-row: 3/5;
+		padding: 11px 16px;
+		@media (max-width: $md2+px) {
+			width: 40px;
+			height: 40px;
+			padding: 0;
+			border-width: 2px;
+			&:hover {
+				background-color: $colorTextLight;
+			}
+		}
+		&._icon-basket-fill::before {
+			font-size: 20px;
+		}
+		&._added {
+			@media (min-width: $md2+px) {
+				display: none;
+				& + .card__quantity {
+					display: flex;
+				}
+			}
+			@media (max-width: $md2+px) {
+				background-color: $colorMainHover;
+				&::before {
+					color: $colorTextLight;
+				}
+			}
+		}
+	}
+
+	&__quantity {
+		display: none;
 	}
 
 	&__in-stock {
+		font-size: 12px;
+		line-height: 16px;
 		grid-column: span 2;
 		display: flex;
 		align-items: center;
+		margin-top: 16px;
+		@media (max-width: $md2+px) {
+			margin-top: 12px;
+		}
 	}
 
 	&__car {
@@ -96,9 +182,12 @@
 
 	&__characters {
 		transition: all 0.3s ease-out;
+		font-size: 12px;
+		line-height: 16px;
 		grid-column: span 2;
 		display: flex;
 		flex-direction: column;
+		visibility: hidden;
 		opacity: 0;
 		height: 0;
 	}
@@ -109,18 +198,17 @@
 	}
 
 	&__value-characters {
-	}
-
-	&:hover {
-		border: 1px solid $colorMainHover;
-		& .card__characters {
-			padding-top: 10px;
-			opacity: 1;
-			height: auto;
-			row-gap: 2px;
-		}
-		& .card__name-characters {
-			margin-top: 6px;
+		& span {
+			&::before {
+				content: url(/img/icons/cross.svg);
+				width: 8px;
+				height: 8px;
+				margin-right: 4px;
+			}
+			&:first-child::before {
+				content: '';
+				margin-right: 0;
+			}
 		}
 	}
 }

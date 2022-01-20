@@ -3,9 +3,9 @@
 let slider = new Swiper('.offer__swiper', {
 	observer: true,
 	observeParents: true,
-	slidesPerView: 4,
+	slidesPerView: 2,
 	// autoHeight: true,
-	spaceBetween: 20,
+	spaceBetween: 8,
 	speed: 800,
 	// touchRatio: 2,
 	simulateTouch: true,
@@ -15,7 +15,7 @@ let slider = new Swiper('.offer__swiper', {
 	// 	el: '.swiper-pagination',
 	// 	type: 'fraction',
 	// },
-	initialSlide: 1,
+	initialSlide: 0,
 	// effect: 'fade',
 	// Arrows
 	// navigation: {
@@ -38,27 +38,16 @@ let slider = new Swiper('.offer__swiper', {
 	// loop: true,
 	//preloadImages: false,
 	//lazy: true,
-	/*
+	
 	breakpoints: {
-		320: {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
-		},
-		768: {
-			slidesPerView: 2,
-			spaceBetween: 20,
-		},
-		992: {
+		767.95: {
 			slidesPerView: 3,
-			spaceBetween: 20,
 		},
-		1268: {
+		1279.95: {
 			slidesPerView: 4,
-			spaceBetween: 30,
 		},
 	},
-	*/
+	
 	// on: {
 	// 	lazyImageReady: function () {
 	// 		ibg();

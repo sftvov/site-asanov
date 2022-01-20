@@ -89,37 +89,39 @@ body {
 // 	}
 // }
 
-// ._arrow {
-// 	position: relative;
-// 	padding-left: 20px;
-// 	&::after,
-// 	&::before {
-// 		content: '';
-// 		position: absolute;
-// 		width: 10px;
-// 		height: 2px;
-// 		background-color: $colorText;
-// 		border-radius: 25%;
-// 		transition: all 0.5s ease;
-// 	}
-// 	&::after {
-// 		top: calc(50% + 1px);
-// 		transform: rotate(50deg);
-// 		right: -4px;
-// 	}
-// 	&::before {
-// 		top: calc(50% + 1px);
-// 		transform: rotate(130deg);
-// 	}
-// 	&._active {
-// 		&::after {
-// 			transform: rotate(130deg);
-// 		}
+._arrow {
+	@media (max-width: $md2+px) {
+		position: relative;
+		padding-left: 20px;
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			width: 10px;
+			height: 2px;
+			background-color: $colorText;
+			border-radius: 25%;
+			transition: all 0.5s ease;
+		}
+		&::after {
+			top: calc(50% + 1px);
+			transform: rotate(50deg);
+			right: 6px;
+		}
+		&::before {
+			top: calc(50% + 1px);
+			transform: rotate(130deg);
+			right: 0;
+		}
+		&._active {
+			&::after {
+				transform: rotate(-50deg);
+			}
 
-// 		&::before {
-// 			transform: rotate(40deg);
-// 			bottom: calc(50% + 2px);
-// 			right: 12px;
-// 		}
-// 	}
-// }
+			&::before {
+				transform: rotate(40deg);
+				bottom: calc(50% + 2px);
+			}
+		}
+	}
+}

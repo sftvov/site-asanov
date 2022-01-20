@@ -43,7 +43,8 @@ let { src, dest } = require('gulp'),
 	webpcss = require('gulp-webpcss'),
 	ttf2woff = require('gulp-ttf2woff'),
 	ttf2woff2 = require('gulp-ttf2woff2'),
-	fonter = require('gulp-fonter');
+	fonter = require('gulp-fonter'),
+	version = require('gulp-version-number');
 
 function browserSync() {
 	browsersync.init({
@@ -56,7 +57,24 @@ function browserSync() {
 }
 
 function html() {
-	return src(path.src.html).pipe(fileinclude()).pipe(webphtml()).pipe(dest(path.build.html)).pipe(browsersync.stream());
+	return src(path.src.html)
+		.pipe(fileinclude())
+		.pipe(webphtml())
+		.pipe(
+			version({
+				value: '%DT%',
+				append: {
+					key: '_v',
+					cover: 0,
+					to: ['css', 'js'],
+				},
+				output: {
+					file: 'version.json',
+				},
+			})
+		)
+		.pipe(dest(path.build.html))
+		.pipe(browsersync.stream());
 }
 
 function css() {

@@ -14,8 +14,12 @@ function closeBurger() {
 	menu.classList.remove('_active');
 }
 
-menu.addEventListener('click', (e) => {
-	if (e.target.tagName === 'A') {
-		closeBurger();
-	}
+// menu.addEventListener('click', (e) => {
+// 	if (e.target.tagName === 'A') {
+// 		closeBurger();
+// 	}
+// });
+
+page.addEventListener('click', (e) => {
+	closeBurger();
 });
