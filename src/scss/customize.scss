@@ -3,12 +3,12 @@ $colorSecond: #fdeaf1;
 $colorLight: #e6e4e7;
 $colorMainHover: #ee2a74;
 $colorLinkHover: #ee2a74;
-$colorBright: #ffa300;
+$colorBright: #f2c94c;
 $colorAlert: #ff3451;
 $colorText: #1a1a1a;
 $colorTextGray: #a2a0a3;
 $colorTextLight: #ffffff;
-
+$colorGreen: #27ae60;
 body {
 	color: $colorText;
 	font-size: 14px;
@@ -97,7 +97,7 @@ body {
 		&::before {
 			content: '';
 			position: absolute;
-			width: 10px;
+			width: 8px;
 			height: 2px;
 			background-color: $colorText;
 			border-radius: 25%;
@@ -106,7 +106,7 @@ body {
 		&::after {
 			top: calc(50% + 1px);
 			transform: rotate(50deg);
-			right: 6px;
+			right: 4px;
 		}
 		&::before {
 			top: calc(50% + 1px);
@@ -120,7 +120,6 @@ body {
 
 			&::before {
 				transform: rotate(40deg);
-				bottom: calc(50% + 2px);
 			}
 		}
 	}

@@ -23,13 +23,32 @@
 		margin-top: 21px;
 		@media (max-width: $md2+px) {
 			margin-bottom: 20px;
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
 	&__text-icon-wrapper {
+		display: flex;
+		align-items: center;
+		column-gap: 2px;
+		&--tel {
+			@media (min-width: $md2+px) {
+				display: none;
+			}
+			& svg {
+				fill: $colorText;
+			}
+			&:hover {
+				& svg {
+					fill: $colorMainHover;
+				}
+			}
+		}
 	}
 
 	&__icon-location {
+		margin-right: 2px;
 	}
 
 	&__column {
@@ -102,7 +121,15 @@
 		&::before {
 			font-size: 16px;
 		}
-		&.gray::before {
+		&--0::before {
+			background: linear-gradient(to right, $colorBright 0%, $colorTextGray 0%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		&--50::before {
+			background: linear-gradient(to right, $colorBright 50%, $colorTextGray 50%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 

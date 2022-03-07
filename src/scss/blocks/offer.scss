@@ -35,7 +35,15 @@
 	}
 
 	&__swiper {
+		position: relative;
 		padding-bottom: 80px;
+	}
+
+	&__prev-button,
+	&__next-button {
+		@media (max-width: $md2+px) {
+			display: none;
+		}
 	}
 
 	&__swiper-container {
@@ -80,6 +88,7 @@
 			// grid-template-rows: 120px minmax(88px, auto) minmax(40px, auto) 28px auto;
 		}
 	}
+
 	&__img {
 		grid-column: span 2;
 		width: 100%;
@@ -99,6 +108,45 @@
 			font-size: 12px;
 			line-height: 16px;
 			padding: 12px 0;
+		}
+	}
+
+	&__sale {
+		font-size: 12px;
+		line-height: 12px;
+		font-weight: 700;
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		display: flex;
+		align-items: center;
+		column-gap: 4px;
+		padding: 8px;
+		border-radius: 8px 8px 8px 0px;
+		@media (max-width: $md2+px) {
+			display: none;
+		}
+		&::before {
+		}
+		&--best-price {
+			background-color: $colorBright;
+			&::before {
+				content: url(/img/icons/base/best-price.svg);
+			}
+		}
+		&--best-price2 {
+			color: $colorTextLight;
+			background-color: $colorMainHover;
+			&::before {
+				content: url(/img/icons/base/ticket.svg);
+			}
+		}
+		&--present {
+			color: $colorTextLight;
+			background-color: $colorGreen;
+			&::before {
+				content: url(/img/icons/base/promo-white.svg);
+			}
 		}
 	}
 

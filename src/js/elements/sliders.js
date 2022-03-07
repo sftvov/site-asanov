@@ -18,10 +18,10 @@ let slider = new Swiper('.offer__swiper', {
 	initialSlide: 0,
 	// effect: 'fade',
 	// Arrows
-	// navigation: {
-	// 	nextEl: '.swiper-button-next',
-	// 	prevEl: '.swiper-button-prev',
-	// },
+	navigation: {
+		nextEl: '.offer__next-button',
+		prevEl: '.offer__prev-button',
+	},
 	// controller: {
 	// 	control: mini_slider,
 	// },
